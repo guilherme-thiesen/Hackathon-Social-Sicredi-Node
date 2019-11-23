@@ -7,7 +7,7 @@ module.exports = {
         autoIncrement: true,
         primaryKey: true
       },
-      category: {
+      category_id: {
         references: { model: "users_category", key: "id" },
         onUpdate: "CASCADE",
         onDelete: "SET NULL",
