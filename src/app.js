@@ -15,7 +15,6 @@ class App {
 
     this.middlewares();
     this.routes();
-    this.exceptionHandler();
   }
 
   middlewares() {
@@ -29,19 +28,6 @@ class App {
 
   routes() {
     this.server.use(routes);
-  }
-
-  exceptionHandler(req, res) {
-    if (process.env.NODE_ENV === "development") {
-      this.server.use(async (err, req, res, next) => {
-        const errors = await new Youch(err, req).toJSON();
-
-        return res.status(500).json(errors);
-      });
-    } else {
-      return res.status(500).json({ error: "Internal server error." });
-    }
-    return false;
   }
 }
 
