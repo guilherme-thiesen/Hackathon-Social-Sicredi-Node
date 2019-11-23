@@ -8,7 +8,8 @@ module.exports = {
         primaryKey: true
       },
       category_id: {
-        references: { model: "users_category", key: "id" },
+        type: Sequelize.INTEGER,
+        references: { model: "user_category", key: "id" },
         onUpdate: "CASCADE",
         onDelete: "SET NULL",
         allowNull: false
@@ -27,19 +28,19 @@ module.exports = {
         unique: true
       },
       ddd: {
-        type: Sequelize.NUMBER,
+        type: Sequelize.INTEGER,
         allowNull: true
       },
       phone: {
-        type: Sequelize.NUMBER,
+        type: Sequelize.INTEGER,
         allowNull: true
       },
       cellphone: {
-        type: Sequelize.NUMBER,
+        type: Sequelize.INTEGER,
         allowNull: true
       },
       postal_code: {
-        type: Sequelize.NUMBER,
+        type: Sequelize.INTEGER,
         allowNull: true
       },
       address: {
@@ -68,11 +69,11 @@ module.exports = {
         default: "BRA"
       },
       latitude: {
-        type: Sequelize.DOUBLE,
+        type: Sequelize.INTEGER,
         allowNull: true
       },
       longitude: {
-        type: Sequelize.DOUBLE,
+        type: Sequelize.INTEGER,
         allowNull: true
       },
       password_hash: {
