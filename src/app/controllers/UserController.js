@@ -3,11 +3,11 @@ import User from "../models/User";
 
 class UserController {
   async index(req, res) {
-    const { category, page = 1, limit = 50 } = req.query;
+    const { category_id, page = 1, limit = 50 } = req.query;
     const offset = (page - 1) * limit;
 
     const response = await User.findAll({
-      where: { category },
+      where: { category_id },
       limit,
       offset
     });
