@@ -32,5 +32,7 @@ module.exports = {
     );
   },
 
-  down: () => {}
+  down: QueryInterface => {
+    return QueryInterface.bulkDelete("user_category", null, {});
+  }
 };

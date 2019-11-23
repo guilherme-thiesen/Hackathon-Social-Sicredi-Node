@@ -4,9 +4,7 @@ import User from "../models/User";
 class GeoController {
   async index(req, res) {
     const schema = Yup.object().shape({
-      latitude: Yup.number().required(),
-      longitude: Yup.number().required(),
-      distance: Yup.number().required(),
+      distance: Yup.number(),
       page: Yup.number(),
       limit: Yup.number()
     });

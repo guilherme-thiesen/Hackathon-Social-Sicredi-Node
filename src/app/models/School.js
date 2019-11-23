@@ -1,17 +1,20 @@
 import Sequelize, { Model } from "sequelize";
-import bcrypt from "bcryptjs";
 import axios from "axios";
 
-class User extends Model {
+class School extends Model {
   static init(sequelize) {
     super.init(
       {
         avatar: Sequelize.STRING,
         name: Sequelize.STRING,
         email: Sequelize.STRING,
+        category_id: Sequelize.INTEGER,
         ddd: Sequelize.INTEGER,
         phone: Sequelize.INTEGER,
         cellphone: Sequelize.INTEGER,
+        themes: Sequelize.ARRAY(Sequelize.INTEGER),
+        series: Sequelize.ARRAY(Sequelize.INTEGER),
+        photos: Sequelize.ARRAY(Sequelize.INTEGER),
         postal_code: Sequelize.INTEGER,
         address: Sequelize.STRING,
         number: Sequelize.STRING,
@@ -20,31 +23,26 @@ class User extends Model {
         state: Sequelize.STRING,
         country: Sequelize.STRING,
         latitude: Sequelize.DOUBLE,
-        longitude: Sequelize.DOUBLE,
-        password: Sequelize.VIRTUAL,
-        password_hash: Sequelize.STRING
+        longitude: Sequelize.DOUBLE
       },
       {
         sequelize
       }
     );
 
-    this.addHook("beforeSave", async user => {
-      if (user.password) {
-        user.password_hash = await bcrypt.hash(user.password, 8);
-      }
-
-      if (user.address && user.state && user.city) {
+    this.addHook("beforeSave", async school => {
+      if (school.address && school.state && school.city) {
         const geoAdress = encodeURI(
-          `${user.address},${user.number} ${user.city} ${user.state}`
+          `${school.address},${school.number} ${school.city} ${school.state}`
         );
         const geograficInfo = await axios.get(
           `https://locationiq.com/v1/search.php?key=48ee726f697141&q=${geoAdress}&format=json`
         );
-        if (geograficInfo.lenght === 1) {
-          const { lat = 0, lon = 0 } = geograficInfo[0];
-          user.latitude = lat;
-          user.longitude = lon;
+        console.log(geograficInfo.data, geograficInfo.data.length);
+        if (geograficInfo.data.length > 0) {
+          const { lat = 0, lon = 0 } = geograficInfo.data[0];
+          school.latitude = lat;
+          school.longitude = lon;
         }
       }
     });
@@ -53,15 +51,11 @@ class User extends Model {
   }
 
   static associate(models) {
-    this.belongsTo(models.UserCategory, {
+    this.belongsTo(models.SchoolCategory, {
       foreignKey: "category_id",
       as: "category"
     });
   }
-
-  checkPassword(password) {
-    return bcrypt.compare(password, this.password_hash);
-  }
 }
 
-export default User;
+export default School;
