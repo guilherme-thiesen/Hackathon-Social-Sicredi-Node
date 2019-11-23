@@ -6,11 +6,19 @@ class UserController {
     const { category_id, page = 1, limit = 50 } = req.query;
     const offset = (page - 1) * limit;
 
-    const response = await User.findAll({
-      where: { category_id },
-      limit,
-      offset
-    });
+    if (category_id) {
+      const response = await User.findAll({
+        where: { category_id },
+        limit,
+        offset
+      });
+    } else {
+      const response = await User.findAll({
+        limit,
+        offset
+      });
+    }
+
     return res.json(response);
   }
 
