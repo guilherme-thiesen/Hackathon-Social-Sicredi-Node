@@ -4,9 +4,10 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
+    "build" : "sucrase ./src -d ./dist --transforms imports",
+    "start" : "node dist/server.js",
     "dev": "nodemon src/server.js",
-    "queue": "nodemon src/queue.js",
-    "devDebug": "nodemon --inspect src/server.js"
+    "queue": "nodemon src/queue.js"
   },
   "dependencies": {
     "@sentry/node": "5.7.1",
