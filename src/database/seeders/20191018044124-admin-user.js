@@ -7,7 +7,7 @@ module.exports = {
       [
         {
           name: "Teste",
-          category: 1,
+          category_id: 1,
           email: "usuario@teste.com",
           password_hash: bcrypt.hashSync("123456", 8),
           created_at: new Date(),
