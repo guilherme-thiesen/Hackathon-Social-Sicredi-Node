@@ -20,7 +20,7 @@ Inserir: POST   /school-foods<br/>
 Pesquisar: GET  /school-infraestructures<br/>
 Inserir: POST   /school-infraestructures<br/>
   Mandatory : category : @String<br/>
- </p>
+  </p>
 
 
 <strong>Atividades Extras</strong><br/>
