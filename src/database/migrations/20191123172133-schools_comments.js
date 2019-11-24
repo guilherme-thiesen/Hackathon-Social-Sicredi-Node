@@ -1,15 +1,15 @@
 module.exports = {
   up: (queryInterface, Sequelize) =>
-    queryInterface.createTable("school_avaliations", {
+    queryInterface.createTable("schools_comments", {
       id: {
         type: Sequelize.INTEGER,
         allowNull: false,
         autoIncrement: true,
         primaryKey: true
       },
-      escola: {
+      school: {
         type: Sequelize.INTEGER,
-        references: { model: "school_category", key: "id" },
+        references: { model: "school", key: "id" },
         onUpdate: "CASCADE",
         onDelete: "SET NULL",
         allowNull: false
@@ -21,8 +21,8 @@ module.exports = {
         onDelete: "SET NULL",
         allowNull: false
       },
-      avaliacao: {
-        type: Sequelize.INTEGER,
+      comentario: {
+        type: Sequelize.STRING,
         allowNull: false
       },
       created_at: {
@@ -36,5 +36,5 @@ module.exports = {
     }),
 
   down: (queryInterface, Sequelize) =>
-    queryInterface.dropTable("school_avaliations")
+    queryInterface.dropTable("schools_comments")
 };
