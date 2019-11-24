@@ -7,6 +7,7 @@ import SchoolCategoryController from "./app/controllers/SchoolCategoryController
 import SchoolFoodTypeController from "./app/controllers/SchoolFoodTypeController";
 import SchoolInfraestructureController from "./app/controllers/SchoolInfraestructureController";
 import SchoolExtraActivityController from "./app/controllers/SchoolExtraActivityController";
+import SchoolTypeController from "./app/controllers/SchoolTypeController";
 import authMiddleware from "./app/middlewares/auth";
 
 const routes = new Router();
@@ -31,6 +32,10 @@ routes.post("/school-infraestructures", SchoolInfraestructureController.store);
 // Rotas para filtros de atividades extras
 routes.get("/school-extra-activities", SchoolExtraActivityController.index);
 routes.post("/school-extra-activities", SchoolExtraActivityController.store);
+
+// Rotas para os tipos de escola
+routes.get("/school-types", SchoolTypeController.index);
+routes.post("/school-types", SchoolTypeController.store);
 
 routes.post("/geo", GeoController.index);
 routes.get("/users", UserController.index);
