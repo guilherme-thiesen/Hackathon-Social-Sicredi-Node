@@ -4,9 +4,10 @@ import User from "../app/models/User";
 import UserCategory from "../app/models/UserCategory";
 import School from "../app/models/School";
 import SchoolCategory from "../app/models/SchoolCategory";
+import SchoolFoodType from "../app/models/SchoolFoodType";
 import databaseConfig from "../config/database";
 
-const models = [UserCategory, User, School, SchoolCategory];
+const models = [UserCategory, User, School, SchoolCategory, SchoolFoodType];
 
 class Database {
   constructor() {

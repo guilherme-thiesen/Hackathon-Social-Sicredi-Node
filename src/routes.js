@@ -4,6 +4,7 @@ import GeoController from "./app/controllers/GeoController";
 import UserController from "./app/controllers/UserController";
 import SchoolController from "./app/controllers/SchoolController";
 import SchoolCategoryController from "./app/controllers/SchoolCategoryController";
+import SchoolFoodTypeController from "./app/controllers/SchoolFoodTypeController";
 import authMiddleware from "./app/middlewares/auth";
 
 const routes = new Router();
@@ -16,6 +17,10 @@ routes.get("/schools-category", SchoolCategoryController.index);
 routes.post("/schools-category", SchoolCategoryController.store);
 routes.put("/schools-category/:id", SchoolCategoryController.update);
 routes.delete("/schools-category/:id", SchoolCategoryController.delete);
+
+// Rotas de Alimentação  de escolas
+routes.get("/school-foods", SchoolFoodTypeController.index);
+routes.post("/school-foods", SchoolFoodTypeController.store);
 
 routes.post("/geo", GeoController.index);
 routes.get("/users", UserController.index);
