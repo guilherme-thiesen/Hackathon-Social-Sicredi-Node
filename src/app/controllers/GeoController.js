@@ -1,5 +1,5 @@
 import * as Yup from "yup";
-import User from "../models/User";
+import School from "../models/School";
 
 class GeoController {
   async index(req, res) {
@@ -20,10 +20,10 @@ class GeoController {
       page = 1,
       limit = 50
     } = req.query;
-
+    //
     const offset = (page - 1) * limit;
 
-    const response = await User.query(`
+    const response = await School.query(`
     SELECT *, point(${latitude}, ${longitude}) <@> point(longitude, latitude)::point as distance
     FROM location
     WHERE (point(${latitude}, ${longitude}) <@> point(longitude, latitude)) < ${distance}
