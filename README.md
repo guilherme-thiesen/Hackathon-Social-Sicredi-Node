@@ -3,8 +3,8 @@
 <p>Lista de rotas <br/>
 
 <strong>Categorias de escolas</strong><br/>
-Pesquisar: GET  /schools-category<br/>
-Inserir: POST   /schools-category<br/>
+Pesquisar: GET  /school-categories<br/>
+Inserir: POST   /school-categories<br/>
   Mandatory : category : @String<br/>
 </p>
 

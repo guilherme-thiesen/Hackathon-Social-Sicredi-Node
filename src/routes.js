@@ -13,10 +13,10 @@ const routes = new Router();
 // routes.use(authMiddleware);
 
 // Rotas de Categorias de escolas
-routes.get("/schools-category", SchoolCategoryController.index);
-routes.post("/schools-category", SchoolCategoryController.store);
-routes.put("/schools-category/:id", SchoolCategoryController.update);
-routes.delete("/schools-category/:id", SchoolCategoryController.delete);
+routes.get("/school-categories", SchoolCategoryController.index);
+routes.post("/school-categories", SchoolCategoryController.store);
+routes.put("/school-categories/:id", SchoolCategoryController.update);
+routes.delete("/school-categories/:id", SchoolCategoryController.delete);
 
 // Rotas de Alimentação  de escolas
 routes.get("/school-foods", SchoolFoodTypeController.index);
