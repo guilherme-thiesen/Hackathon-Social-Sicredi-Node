@@ -14,3 +14,10 @@ Pesquisar: GET  /school-foods<br/>
 Inserir: POST   /school-foods<br/>
   Mandatory : category : @String<br/>
 </p>
+
+
+<strong>Infraestrutura das escolas</strong><br/>
+Pesquisar: GET  /school-infraestructures<br/>
+Inserir: POST   /school-infraestructures<br/>
+  Mandatory : category : @String<br/>
+</p>

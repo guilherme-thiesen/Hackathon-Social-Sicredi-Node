@@ -5,9 +5,17 @@ import UserCategory from "../app/models/UserCategory";
 import School from "../app/models/School";
 import SchoolCategory from "../app/models/SchoolCategory";
 import SchoolFoodType from "../app/models/SchoolFoodType";
+import SchoolInfraestructure from "../app/models/SchoolInfraestructure";
 import databaseConfig from "../config/database";
 
-const models = [UserCategory, User, School, SchoolCategory, SchoolFoodType];
+const models = [
+  UserCategory,
+  User,
+  School,
+  SchoolCategory,
+  SchoolFoodType,
+  SchoolInfraestructure
+];
 
 class Database {
   constructor() {

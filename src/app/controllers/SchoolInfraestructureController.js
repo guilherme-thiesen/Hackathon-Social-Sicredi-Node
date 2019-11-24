@@ -1,13 +1,13 @@
 import * as Yup from "yup";
 import { Op } from "sequelize";
-import SchoolFoodType from "../models/SchoolFoodType";
+import SchoolInfraestructure from "../models/SchoolInfraestructure";
 
-class SchoolFoodTypeController {
+class SchoolInfraestructureController {
   async index(req, res) {
     const { page = 1, limit = 50 } = req.query;
     const offset = (page - 1) * limit;
 
-    const response = await SchoolFoodType.findAll({
+    const response = await SchoolInfraestructure.findAll({
       limit,
       offset
     });
@@ -23,7 +23,7 @@ class SchoolFoodTypeController {
       return res.status(400).json({ error: "Validation failed" });
     }
 
-    const response = await SchoolFoodType.create(req.body);
+    const response = await SchoolInfraestructure.create(req.body);
     return res.json({
       response
     });
@@ -44,11 +44,11 @@ class SchoolFoodTypeController {
       return res.status(400).json({ error: "ID is mandatory" });
     }
 
-    const schoolFoodType = SchoolFoodType.findOne({
+    const schoolInfraestructure = SchoolInfraestructure.findOne({
       where: { id }
     });
 
-    const response = await schoolFoodType.update(req.body);
+    const response = await schoolInfraestructure.update(req.body);
     return res.json({
       response
     });
@@ -61,15 +61,15 @@ class SchoolFoodTypeController {
       return res.status(400).json({ error: "ID is mandatory" });
     }
 
-    const schoolFoodType = SchoolFoodType.findOne({
+    const schoolInfraestructure = SchoolInfraestructure.findOne({
       where: { id }
     });
 
-    const response = await schoolFoodType.destroy();
+    const response = await schoolInfraestructure.destroy();
     return res.json({
       response
     });
   }
 }
 
-export default new SchoolFoodTypeController();
+export default new SchoolInfraestructureController();
