@@ -21,3 +21,10 @@ Pesquisar: GET  /school-infraestructures<br/>
 Inserir: POST   /school-infraestructures<br/>
   Mandatory : category : @String<br/>
 </p>
+
+
+<strong>Atividades Extras</strong><br/>
+Pesquisar: GET  /school-extra-activities<br/>
+Inserir: POST   /school-extra-activities<br/>
+  Mandatory : category : @String<br/>
+</p>
