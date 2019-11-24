@@ -59,7 +59,7 @@ class SchoolCategoryController {
       return res.status(400).json({ error: "ID is mandatory" });
     }
 
-    const schoolCategory = await SchoolCategory.find({ where: { id } });
+    const schoolCategory = await SchoolCategory.findOne({ where: { id } });
 
     const response = await schoolCategory.destroy();
     return res.json({
