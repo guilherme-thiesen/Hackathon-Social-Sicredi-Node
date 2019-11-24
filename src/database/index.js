@@ -9,6 +9,7 @@ import SchoolFoodType from "../app/models/SchoolFoodType";
 import SchoolInfraestructure from "../app/models/SchoolInfraestructure";
 import SchoolExtraActivity from "../app/models/SchoolExtraActivity";
 import SchoolType from "../app/models/SchoolType";
+import SchoolAccessibility from "../app/models/SchoolAccessibility";
 import databaseConfig from "../config/database";
 
 const models = [
@@ -20,7 +21,8 @@ const models = [
   SchoolInfraestructure,
   SchoolExtraActivity,
   SchoolType,
-  SchoolList
+  SchoolList,
+  SchoolAccessibility
 ];
 
 class Database {

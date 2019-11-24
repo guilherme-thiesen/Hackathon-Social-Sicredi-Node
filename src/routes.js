@@ -9,7 +9,7 @@ import SchoolFoodTypeController from "./app/controllers/SchoolFoodTypeController
 import SchoolInfraestructureController from "./app/controllers/SchoolInfraestructureController";
 import SchoolExtraActivityController from "./app/controllers/SchoolExtraActivityController";
 import SchoolTypeController from "./app/controllers/SchoolTypeController";
-
+import SchoolAccessibilityController from "./app/controllers/SchoolAccessibilityController";
 import authMiddleware from "./app/middlewares/auth";
 
 const routes = new Router();
@@ -39,8 +39,7 @@ routes.post("/school-extra-activities", SchoolExtraActivityController.store);
 routes.get("/school-types", SchoolTypeController.index);
 routes.post("/school-types", SchoolTypeController.store);
 
-// arquivo
-
+// Upload de arquivo
 routes.get("/censo", CensoController.index);
 routes.get("/censoLat", CensoController.index);
 
@@ -48,8 +47,14 @@ routes.get("/censoLat", CensoController.index);
 routes.get("/geo-lat", GeoController.index);
 routes.get("/geo-address", GeoController.index_address);
 
+// Rotas para pesquisa de usuários
 routes.get("/users", UserController.index);
-routes.get("/near-schools", GeoController.index);
+
+// Rotas para pesquisa de atendimento para pessoas com necessidades especiais.
+routes.get("/school-accessibilities", SchoolAccessibilityController.index);
+routes.post("/school-accessibilities", SchoolAccessibilityController.store);
+
+// Rotas para pesquisa de escolas
 routes.get("/schools", SchoolController.index);
 routes.post("/schools", SchoolController.store);
 

@@ -73,11 +73,11 @@ module.exports = {
         allowNull: true
       },
       longitude: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.FLOAT,
         allowNull: true
       },
       password_hash: {
-        type: Sequelize.STRING,
+        type: Sequelize.FLOAT,
         allowNull: false
       },
       created_at: {

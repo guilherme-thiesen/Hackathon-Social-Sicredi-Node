@@ -1,12 +1,12 @@
 import * as Yup from "yup";
-import SchoolCategory from "../models/SchoolCategory";
+import SchoolAccessibility from "../models/SchoolAccessibility";
 
-class SchoolCategoryController {
+class SchoolAccessibilityController {
   async index(req, res) {
     const { page = 1, limit = 50 } = req.query;
     const offset = (page - 1) * limit;
 
-    const response = await SchoolCategory.findAll({
+    const response = await SchoolAccessibility.findAll({
       limit,
       offset
     });
@@ -22,7 +22,7 @@ class SchoolCategoryController {
       return res.status(400).json({ error: "Validation failed" });
     }
 
-    const response = await SchoolCategory.create(req.body);
+    const response = await SchoolAccessibility.create(req.body);
     return res.json({
       response
     });
@@ -43,9 +43,9 @@ class SchoolCategoryController {
       return res.status(400).json({ error: "ID is mandatory" });
     }
 
-    const schoolCategory = SchoolCategory.findByPk(id);
+    const schoolAccessibility = SchoolAccessibility.findByPk(id);
 
-    const response = await schoolCategory.update(req.body);
+    const response = await schoolAccessibility.update(req.body);
     return res.json({
       response
     });
@@ -58,13 +58,15 @@ class SchoolCategoryController {
       return res.status(400).json({ error: "ID is mandatory" });
     }
 
-    const schoolCategory = await SchoolCategory.findOne({ where: { id } });
+    const schoolAccessibility = await SchoolAccessibility.findOne({
+      where: { id }
+    });
 
-    const response = await schoolCategory.destroy();
+    const response = await schoolAccessibility.destroy();
     return res.json({
       response
     });
   }
 }
 
-export default new SchoolCategoryController();
+export default new SchoolAccessibilityController();
