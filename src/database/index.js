@@ -3,6 +3,7 @@ import Sequelize from "sequelize";
 import User from "../app/models/User";
 import UserCategory from "../app/models/UserCategory";
 import School from "../app/models/School";
+import SchoolList from "../app/models/SchoolList";
 import SchoolCategory from "../app/models/SchoolCategory";
 import SchoolFoodType from "../app/models/SchoolFoodType";
 import SchoolInfraestructure from "../app/models/SchoolInfraestructure";
@@ -18,7 +19,8 @@ const models = [
   SchoolFoodType,
   SchoolInfraestructure,
   SchoolExtraActivity,
-  SchoolType
+  SchoolType,
+  SchoolList
 ];
 
 class Database {

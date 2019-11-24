@@ -9,6 +9,7 @@ import SchoolFoodTypeController from "./app/controllers/SchoolFoodTypeController
 import SchoolInfraestructureController from "./app/controllers/SchoolInfraestructureController";
 import SchoolExtraActivityController from "./app/controllers/SchoolExtraActivityController";
 import SchoolTypeController from "./app/controllers/SchoolTypeController";
+
 import authMiddleware from "./app/middlewares/auth";
 
 const routes = new Router();

@@ -1,6 +1,6 @@
 import * as Yup from "yup";
 import { Op } from "sequelize";
-import School from "../models/School";
+import SchoolList from "../models/SchoolList";
 
 class SchoolController {
   async index(req, res) {
@@ -12,7 +12,7 @@ class SchoolController {
       where.themes = { [Op.contains]: themes };
     }
 
-    const response = await School.findAll({
+    const response = await SchoolList.findAll({
       where: where || false,
       limit,
       offset
@@ -31,7 +31,7 @@ class SchoolController {
       return res.status(400).json({ error: "Validation failed" });
     }
 
-    const response = await School.create(req.body);
+    const response = await SchoolList.create(req.body);
     return res.json({
       response
     });
