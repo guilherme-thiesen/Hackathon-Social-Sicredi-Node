@@ -24,11 +24,7 @@ class SchoolController {
   async store(req, res) {
     const schema = Yup.object().shape({
       name: Yup.string().required(),
-      phone: Yup.number(),
-
-      email: Yup.string()
-        .email()
-        .required()
+      phone: Yup.number()
     });
 
     if (!(await schema.isValid(req.body))) {

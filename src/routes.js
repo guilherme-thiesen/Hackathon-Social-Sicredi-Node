@@ -1,5 +1,6 @@
 import { Router } from "express";
 
+import CensoController from "./app/controllers/CensoController";
 import GeoController from "./app/controllers/GeoController";
 import UserController from "./app/controllers/UserController";
 import SchoolController from "./app/controllers/SchoolController";
@@ -36,6 +37,10 @@ routes.post("/school-extra-activities", SchoolExtraActivityController.store);
 // Rotas para os tipos de escola
 routes.get("/school-types", SchoolTypeController.index);
 routes.post("/school-types", SchoolTypeController.store);
+
+// arquivo
+
+routes.get("/censo", CensoController.index);
 
 routes.post("/geo", GeoController.index);
 routes.get("/users", UserController.index);
