@@ -28,3 +28,9 @@ Pesquisar: GET  /school-extra-activities<br/>
 Inserir: POST   /school-extra-activities<br/>
   Mandatory : category : @String<br/>
 </p>
+
+<strong>Tipos de escolas</strong><br/>
+Pesquisar: GET  /school-types<br/>
+Inserir: POST   /schoo-types<br/>
+  Mandatory : category : @String<br/>
+</p>
