@@ -46,24 +46,24 @@ Inserir categoria de acessibilidade: POST  /school-accessibility<br/>
 
 </p>
 
-##Estrutura das Features
+# #Estrutura das Features
 
 <p>
 Cada feature disponibilizada neste projeto tem sua funcionalidade centrada em basicamente 4 tipos de arquivo.
 <br/>
 <strong>Controller => /src/controllers</strong><br/>
 O arquivo do controller é responsável por gerenciar as regras da feature e armazena as funções
-responsáveis por apoiar as routes.<br/><br/>
+responsáveis por apoiar as routes.<br/>
 
 <strong>Model => /src/models</strong><br/>
 O model define a estrutura de dados que será utilizada nesta feature, assim como algum ajuste necessário.
-<br/><br/>
+<br/>
 
 <strong>Migration => /src/database/migrations</strong><br/>
 Arquivo de configuração da tabela no banco de dados utilizada nesta feature
-<br/><br/>
+<br/>
 
 <strong>Routes => /src/routes.js</strong><br/>
 Arquivo que centraliza as rotas de acesso ao sistema
-<br/><br/>
+<br/>
 </p>
