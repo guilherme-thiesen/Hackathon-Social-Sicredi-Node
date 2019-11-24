@@ -34,3 +34,12 @@ Pesquisar: GET  /school-types<br/>
 Inserir: POST   /schoo-types<br/>
   Mandatory : category : @String<br/>
 </p>
+
+<strong>Geolocalização</strong><br/>
+Pesquisar por latitude e longitude: GET  /geo-lat<br/>
+    Mandatory : latitude : @Float<br/>
+    Mandatory : longitude : @Float<br/>
+Pesquisar por endereço: GET  /geo-address<br/>
+    Mandatory : address : @String<br/>
+
+</p>

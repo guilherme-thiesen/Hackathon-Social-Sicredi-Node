@@ -42,8 +42,12 @@ routes.post("/school-types", SchoolTypeController.store);
 // arquivo
 
 routes.get("/censo", CensoController.index);
+routes.get("/censoLat", CensoController.index);
 
-routes.post("/geo", GeoController.index);
+// Rotas para pesquisa de distância
+routes.get("/geo-lat", GeoController.index);
+routes.get("/geo-address", GeoController.index_address);
+
 routes.get("/users", UserController.index);
 routes.get("/near-schools", GeoController.index);
 routes.get("/schools", SchoolController.index);
