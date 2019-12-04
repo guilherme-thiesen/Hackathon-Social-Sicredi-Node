@@ -1,3 +1,27 @@
+# Apresentação
+<p>
+Projeto de Backend em NodeJs desenvolvido durante o Hackathon Social pela Educação, da prefeitura de Porto Alegre, em parceria com o Sicredi.<br/><br/>
+  
+O objetivo deste Backend é disponibilizar estruturas de Crud e uma regra de negócios que permite a pesquisa de escolas próximas a uma localização (seja um endereço, ou uma relação de Latitude x Longitude)<br/><br/>
+
+Tecnologias utilizadas:<br/>
+NodeJS<br/>
+Postgres (Docker)<br/><br/>
+
+Arquitetura:<br/>
+REST API<br/>
+MVC (Model, View, Controller)<br/><br/>
+
+Estruturas de apoio:<br/>
+Migrations<br/>
+Seeders<br/><br/>
+
+Ferramentas de apoio:<br/>
+Insominia (Testes)<br/>
+PostBird: (Visualização do DB)<br/>
+
+</p>
+
 # Backend Desenvolvido para o Hackaton de Porto Alegre
 
 # #Lista de rotas
