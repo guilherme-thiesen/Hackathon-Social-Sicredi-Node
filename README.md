@@ -22,9 +22,9 @@ PostBird: (Visualização do DB)<br/>
 
 </p>
 
-# Backend Desenvolvido para o Hackaton de Porto Alegre
 
-# #Lista de rotas
+
+# #Estrutura de Rotas da API
 <p> <br/>
 
 <strong>Categorias de escolas</strong><br/>
